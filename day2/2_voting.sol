@@ -11,7 +11,6 @@ contract Voting {
 
     struct Ballot {
         uint256 id;
-        string name;
         Candidate[] candidates;
         uint256 end;
     }
@@ -29,19 +28,17 @@ contract Voting {
         admin = msg.sender;
     }
 
-    function addVoters(address[] calldata _voters) external onlyAdmin() {
+    function addVoters(address[] calldata _voters) external onlyAdmin {
         for (uint256 i = 0; i < _voters.length; i++) {
             voters[_voters[i]] = true;
         }
     }
 
-    function createBallot(
-        string calldata name,
-        string[] calldata candidateNames,
-        uint256 bufferTime
-    ) external onlyAdmin() {
+    function createBallot(string[] calldata candidateNames, uint256 bufferTime)
+        external
+        onlyAdmin
+    {
         ballots[nextBalletId].id = nextBalletId;
-        ballots[nextBalletId].name = name;
         for (uint256 i = 0; i < candidateNames.length; i++) {
             ballots[nextBalletId].candidates.push(
                 Candidate(i, candidateNames[i], 0)
