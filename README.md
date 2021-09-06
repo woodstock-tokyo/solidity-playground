@@ -14,3 +14,7 @@ Solidity playground
 
 - crud
 - voting
+
+### Day 3
+
+- state machine
