@@ -18,3 +18,7 @@ Solidity playground
 ### Day 3
 
 - state machine
+
+### Day 4
+
+- erc20
