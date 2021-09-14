@@ -22,3 +22,7 @@ Solidity playground
 ### Day 4
 
 - erc20
+
+### Day 5
+
+- erc721
